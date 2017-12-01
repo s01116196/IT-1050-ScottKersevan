@@ -1,0 +1,7 @@
+C:\Users\Scott\source\repos\Lab008\Lab008\bin\Debug\Lab008.exe.config
+C:\Users\Scott\source\repos\Lab008\Lab008\bin\Debug\Lab008.exe
+C:\Users\Scott\source\repos\Lab008\Lab008\bin\Debug\Lab008.pdb
+C:\Users\Scott\source\repos\Lab008\Lab008\obj\Debug\Lab008.csprojResolveAssemblyReference.cache
+C:\Users\Scott\source\repos\Lab008\Lab008\obj\Debug\Lab008.csproj.CoreCompileInputs.cache
+C:\Users\Scott\source\repos\Lab008\Lab008\obj\Debug\Lab008.exe
+C:\Users\Scott\source\repos\Lab008\Lab008\obj\Debug\Lab008.pdb
