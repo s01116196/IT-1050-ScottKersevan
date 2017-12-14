@@ -4,72 +4,73 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab008
+namespace Lab09
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string[] names = { "Al Dente", "Anna Graham", "Earle Bird", "Ginger Rayle", "Iona Ford" };
-            Console.WriteLine(names[1] + " " + names[4]);
+            Console.WriteLine("Question 1:");
+            Console.WriteLine("");
+            var fruits = new[] { "apple", "mango", "orange", "apricot", "cherry", "grape", "blueberry" };
 
+            foreach (var fruit in fruits)
+            { Console.WriteLine(fruit); }
+            Console.WriteLine("");
+            Console.WriteLine("Question 2:");
+            IEnumerable<string> query = from fruit in fruits
+                                        where fruit[0].Equals('a')
 
+                                        select fruit.ToUpper();
+            foreach (var fruit in query)
+Console.WriteLine(fruit);
+            Console.WriteLine("");
             {
-                string[] months = new string[12];
-                months[0] = "January";
-                months[1] = "February";
-                months[2] = "March";
-                months[3] = "April";
-                months[4] = "May";
-                months[5] = "June";
-                months[6] = "July";
-                months[7] = "August";
-                months[8] = "September";
-                months[9] = "October";
-                months[10] = "November";
-                months[11] = "December";
 
-                for (int i = 0; i < 12; i++)
-                {
-                    Console.WriteLine(i + " " + months[i]);
-                }
-                {
-                    string[] seasons = new string[4];
-                    seasons[0] = "Spring";
-                    seasons[1] = "Summer";
-                    seasons[2] = "Autumn";
-                    seasons[3] = "Winter";
-                    foreach (string season in seasons)
-                    { Console.WriteLine(season); }
+                
+                Console.WriteLine("Questions 3-4:");
 
-                    {
-                        int[] numbers = new int[1000];
-                        Random random = new Random();
-                        for (int i = 0; i < 1000; i++)
-                        {
-                            int randomnumber = random.Next(0, 100);
-                            numbers[i] = randomnumber;
-                        }
-                        foreach (int number in numbers)
-                        { Console.WriteLine(number); }
+                List<DateTime> months = new List<DateTime> {new DateTime (2017, 7, 4), new DateTime(2017, 8, 4), new DateTime(2017, 9, 4),
+                new DateTime(2017, 10, 4), new DateTime(2017, 11, 4),
+                new DateTime(2017, 12, 4) };
+                Console.WriteLine(months.Count);
+                Console.WriteLine(months.Capacity);
+                Console.WriteLine("");
+
+                foreach (DateTime month in months)
+                { Console.WriteLine(month.ToString("MMMM")); }
+                Console.WriteLine("");
+                months.AddRange(new List<DateTime> {new DateTime (2017, 1, 4), new DateTime(2017, 2, 4), new DateTime(2017, 3, 4),
+                new DateTime(2017, 4, 4), new DateTime(2017, 5, 4),
+                new DateTime(2017, 6, 4) });
+                months.Sort();
+                foreach (DateTime month in months)
+                { Console.WriteLine(month.ToString("MMMM")); }
+                Console.WriteLine("");
 
 
+                months.Remove(new DateTime(2017, 1, 4));
+                months.Remove(new DateTime(2017, 2, 4));
+                months.Remove(new DateTime(2017, 3, 4));
+                months.Remove(new DateTime(2017, 4, 4));
+                months.Remove(new DateTime(2017, 5, 4));
+                months.Remove(new DateTime(2017, 6, 4));
+                Console.WriteLine(""); Console.WriteLine(months.Count);
+                Console.WriteLine(months.Capacity);
+                Console.WriteLine();
 
-                        {
-                            string[] named = { "Al Dente", "Anna Graham", "Earle Bird", "Ginger Rayle", "Iona Ford" };
 
-                            int i = 0;
-                            while (i < named.Length)
-                            {
-                                Console.WriteLine(named[i]);
-                                i++;
+                IEnumerable<DateTime> ber = from month in months
+                                            where month.ToString("MMMM").Contains("ber")
+                                            select month;
+                foreach (DateTime month in ber)
+                { Console.WriteLine(month.ToString("MMMM")); }
 
-                            }
-                        }
-                    }
 
-                        }
-                }
+
+                
+
+            }
         }
     }
 }
